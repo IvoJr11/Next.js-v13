@@ -15,12 +15,18 @@ a {
   box-sizing: border-box;
 }
 
+body {
+  padding: 20px 100px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
   body {
     color: white;
-    background: black;
+    background: rgb(20, 20, 20);
   }
 }
