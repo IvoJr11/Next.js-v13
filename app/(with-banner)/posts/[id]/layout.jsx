@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import styles from '../Posts.module.css'
 
 const fetchPost = (id) => {
   return fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, { cache: 'no-cache' })
@@ -11,11 +12,13 @@ export default async function Post ({ children, params }) {
   const post = await fetchPost(id)
 
   return (
-    <div>
-      <h3>{post.title}</h3>
-      <p>{post.body}</p>
-      <Link href='/posts/[id]/comments' as={`/posts/${id}/comments`}>Ver comentarios</Link>
-      {children}
-    </div>
+    <section className={styles.postWithComments}>
+      <div className={styles.post}>
+        <h3>{post.title}</h3>
+        <p>{post.body}</p>
+        <Link href='/posts/[id]/comments' as={`/posts/${id}/comments`}>Ver comentarios</Link>
+        {children}
+      </div>
+    </section>
   )
 }

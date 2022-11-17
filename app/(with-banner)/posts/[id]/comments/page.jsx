@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { groteskFont } from '../../../../fonts'
 
 const fetchComments = (id) => {
@@ -14,8 +15,9 @@ export default async function CommentsPage ({ params }) {
     <section className={groteskFont.className} style={{ backgroundColor: '#444', padding: '10px', borderRadius: '15px', fontSize: '14px', marginTop: '5px' }}>
       {comments.map(comment =>
         <div key={comment.id}>
-          <h3>{comment.name}</h3>
+          <Image style={{ borderRadius: '50%' }} src={`https://i.pravatar.cc/150?u=${comment.email}`} width={50} height={50} alt='uwu' />
           <small>{comment.email}</small>
+          <h3>{comment.name}</h3>
           <p>{comment.body}</p>
         </div>
       )}

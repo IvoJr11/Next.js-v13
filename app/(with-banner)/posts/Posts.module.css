@@ -11,3 +11,8 @@
   border-radius: 15px;
   padding: 20px;
 }
+
+.postWithComments {
+  display: flex;
+  justify-content: center;
+}
